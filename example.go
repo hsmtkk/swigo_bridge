@@ -12,12 +12,34 @@
 
 package example
 
+/*
+#define intgo swig_intgo
+typedef void *swig_voidp;
+
+#include <stdint.h>
+
+
+typedef long long intgo;
+typedef unsigned long long uintgo;
+
+
+
+typedef struct { char *p; intgo n; } _gostring_;
+typedef struct { void* array; intgo len; intgo cap; } _goslice_;
+
+
+extern void _wrap_Swig_free_example_fe57d0301a1c3822(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_example_fe57d0301a1c3822(swig_intgo arg1);
+extern uintptr_t _wrap_new_Example_example_fe57d0301a1c3822(swig_intgo arg1);
+extern swig_intgo _wrap_Example_GetNumber_example_fe57d0301a1c3822(uintptr_t arg1);
+extern void _wrap_delete_Example_example_fe57d0301a1c3822(uintptr_t arg1);
+#undef intgo
+*/
+import "C"
+
 import "unsafe"
 import _ "runtime/cgo"
 import "sync"
-
-var _cgo_runtime_cgocall func(unsafe.Pointer, uintptr)
-
 
 
 type _ unsafe.Pointer
@@ -34,25 +56,18 @@ type _swig_memberptr *byte
 
 type _ sync.Mutex
 
-var _wrap_Swig_free_example_fe57d0301a1c3822 unsafe.Pointer
-
-func _swig_wrap_Swig_free(base uintptr) {
-	_swig_p := uintptr(unsafe.Pointer(&base))
-	_cgo_runtime_cgocall(_wrap_Swig_free_example_fe57d0301a1c3822, _swig_p)
-	return
-}
-
 func Swig_free(arg1 uintptr) {
-	_swig_wrap_Swig_free(arg1)
+	_swig_i_0 := arg1
+	C._wrap_Swig_free_example_fe57d0301a1c3822(C.uintptr_t(_swig_i_0))
 }
-
-var _wrap_Swig_malloc_example_fe57d0301a1c3822 unsafe.Pointer
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
-	_swig_p := uintptr(unsafe.Pointer(&arg1))
-	_cgo_runtime_cgocall(_wrap_Swig_malloc_example_fe57d0301a1c3822, _swig_p)
-	return
+	var swig_r uintptr
+	_swig_i_0 := arg1
+	swig_r = (uintptr)(C._wrap_Swig_malloc_example_fe57d0301a1c3822(C.swig_intgo(_swig_i_0)))
+	return swig_r
 }
+
 type SwigcptrExample uintptr
 
 func (p SwigcptrExample) Swigcptr() uintptr {
@@ -62,40 +77,23 @@ func (p SwigcptrExample) Swigcptr() uintptr {
 func (p SwigcptrExample) SwigIsExample() {
 }
 
-var _wrap_new_Example_example_fe57d0301a1c3822 unsafe.Pointer
-
-func _swig_wrap_new_Example(base int) (_ SwigcptrExample) {
-	_swig_p := uintptr(unsafe.Pointer(&base))
-	_cgo_runtime_cgocall(_wrap_new_Example_example_fe57d0301a1c3822, _swig_p)
-	return
-}
-
 func NewExample(arg1 int) (_swig_ret Example) {
-	return _swig_wrap_new_Example(arg1)
-}
-
-var _wrap_Example_GetNumber_example_fe57d0301a1c3822 unsafe.Pointer
-
-func _swig_wrap_Example_GetNumber(base SwigcptrExample) (_ int) {
-	_swig_p := uintptr(unsafe.Pointer(&base))
-	_cgo_runtime_cgocall(_wrap_Example_GetNumber_example_fe57d0301a1c3822, _swig_p)
-	return
+	var swig_r Example
+	_swig_i_0 := arg1
+	swig_r = (Example)(SwigcptrExample(C._wrap_new_Example_example_fe57d0301a1c3822(C.swig_intgo(_swig_i_0))))
+	return swig_r
 }
 
 func (arg1 SwigcptrExample) GetNumber() (_swig_ret int) {
-	return _swig_wrap_Example_GetNumber(arg1)
-}
-
-var _wrap_delete_Example_example_fe57d0301a1c3822 unsafe.Pointer
-
-func _swig_wrap_delete_Example(base uintptr) {
-	_swig_p := uintptr(unsafe.Pointer(&base))
-	_cgo_runtime_cgocall(_wrap_delete_Example_example_fe57d0301a1c3822, _swig_p)
-	return
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_Example_GetNumber_example_fe57d0301a1c3822(C.uintptr_t(_swig_i_0)))
+	return swig_r
 }
 
 func DeleteExample(arg1 Example) {
-	_swig_wrap_delete_Example(arg1.Swigcptr())
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Example_example_fe57d0301a1c3822(C.uintptr_t(_swig_i_0))
 }
 
 type Example interface {
@@ -104,12 +102,4 @@ type Example interface {
 	GetNumber() (_swig_ret int)
 }
 
-
-type SwigcptrVoid uintptr
-type Void interface {
-	Swigcptr() uintptr;
-}
-func (p SwigcptrVoid) Swigcptr() uintptr {
-	return uintptr(p)
-}
 

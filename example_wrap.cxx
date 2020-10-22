@@ -227,32 +227,6 @@ static void _swig_gopanic(const char *p) {
 
 
 
-static void *_swig_goallocate(size_t len) {
-  struct {
-    size_t len;
-    void *ret;
-  } SWIGSTRUCTPACKED a;
-  a.len = len;
-  crosscall2(_cgo_allocate, &a, (int) sizeof a);
-  return a.ret;
-}
-
-
-
-
-/* This is here for backward compatibility, but it will not work
-   with Go 1.5 or later.  Do not use it in new code.  */
-static _gostring_ _swig_makegostring(const char *p, size_t l) {
-  _gostring_ ret;
-  ret.p = (char*)_swig_goallocate(l + 1);
-  memcpy(ret.p, p, l);
-  ret.n = l;
-  return ret;
-}
-
-
-
-
 #define SWIG_contract_assert(expr, msg) \
   if (!(expr)) { _swig_gopanic(msg); } else
 
@@ -272,16 +246,9 @@ static void* Swig_malloc(int c) {
 extern "C" {
 #endif
 
-void
-_wrap_Swig_free_example_fe57d0301a1c3822(void *swig_v)
-{
+void _wrap_Swig_free_example_fe57d0301a1c3822(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
-  void *_swig_go_0;
-  struct swigargs {
-    void *arg1;
-  } SWIGSTRUCTPACKED *swig_a = (struct swigargs *) swig_v;
   
-  _swig_go_0 = swig_a->arg1;
   arg1 = *(void **)&_swig_go_0; 
   
   Swig_free(arg1);
@@ -289,91 +256,48 @@ _wrap_Swig_free_example_fe57d0301a1c3822(void *swig_v)
 }
 
 
-void
-_wrap_Swig_malloc_example_fe57d0301a1c3822(void *swig_v)
-{
+void *_wrap_Swig_malloc_example_fe57d0301a1c3822(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
-  intgo _swig_go_0;
   void *_swig_go_result;
-  char *swig_stktop;
-  struct swigargs {
-    intgo arg1;
-    long : 0;
-    void *result;
-  } SWIGSTRUCTPACKED *swig_a = (struct swigargs *) swig_v;
   
-  _swig_go_0 = swig_a->arg1;
   arg1 = (int)_swig_go_0; 
   
-  swig_stktop = _swig_topofstack();
   result = (void *)Swig_malloc(arg1);
   *(void **)&_swig_go_result = (void *)result; 
-  swig_a = (struct swigargs*)((char*)swig_a + (_swig_topofstack() - swig_stktop));
-  swig_a->result = _swig_go_result;
+  return _swig_go_result;
 }
 
 
-void
-_wrap_new_Example_example_fe57d0301a1c3822(void *swig_v)
-{
+Example *_wrap_new_Example_example_fe57d0301a1c3822(intgo _swig_go_0) {
   int arg1 ;
   Example *result = 0 ;
-  intgo _swig_go_0;
   Example *_swig_go_result;
-  char *swig_stktop;
-  struct swigargs {
-    intgo arg1;
-    long : 0;
-    Example *result;
-  } SWIGSTRUCTPACKED *swig_a = (struct swigargs *) swig_v;
   
-  _swig_go_0 = swig_a->arg1;
   arg1 = (int)_swig_go_0; 
   
-  swig_stktop = _swig_topofstack();
   result = (Example *)new Example(arg1);
   *(Example **)&_swig_go_result = (Example *)result; 
-  swig_a = (struct swigargs*)((char*)swig_a + (_swig_topofstack() - swig_stktop));
-  swig_a->result = _swig_go_result;
+  return _swig_go_result;
 }
 
 
-void
-_wrap_Example_GetNumber_example_fe57d0301a1c3822(void *swig_v)
-{
+intgo _wrap_Example_GetNumber_example_fe57d0301a1c3822(Example *_swig_go_0) {
   Example *arg1 = (Example *) 0 ;
   int result;
-  Example *_swig_go_0;
   intgo _swig_go_result;
-  char *swig_stktop;
-  struct swigargs {
-    Example *arg1;
-    long : 0;
-    intgo result;
-  } SWIGSTRUCTPACKED *swig_a = (struct swigargs *) swig_v;
   
-  _swig_go_0 = swig_a->arg1;
   arg1 = *(Example **)&_swig_go_0; 
   
-  swig_stktop = _swig_topofstack();
   result = (int)(arg1)->GetNumber();
   _swig_go_result = result; 
-  swig_a = (struct swigargs*)((char*)swig_a + (_swig_topofstack() - swig_stktop));
-  swig_a->result = _swig_go_result;
+  return _swig_go_result;
 }
 
 
-void
-_wrap_delete_Example_example_fe57d0301a1c3822(void *swig_v)
-{
+void _wrap_delete_Example_example_fe57d0301a1c3822(Example *_swig_go_0) {
   Example *arg1 = (Example *) 0 ;
-  Example *_swig_go_0;
-  struct swigargs {
-    Example *arg1;
-  } SWIGSTRUCTPACKED *swig_a = (struct swigargs *) swig_v;
   
-  _swig_go_0 = swig_a->arg1;
   arg1 = *(Example **)&_swig_go_0; 
   
   delete arg1;
